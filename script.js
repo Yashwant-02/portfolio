@@ -272,6 +272,17 @@
     var overlay = document.getElementById("cert-modal");
     var img = document.getElementById("cert-modal-img");
     var title = document.getElementById("cert-modal-title");
+    var box = overlay.querySelector(".modal-box");
+
+    img.style.display = "";
+    var existingMsg = box.querySelector(".modal-missing");
+    if (existingMsg) existingMsg.remove();
+
+    img.onerror = function () {
+      img.style.display = "none";
+      var msg = el("p", { class: "modal-missing", text: "This certificate image hasn't been uploaded yet." });
+      box.appendChild(msg);
+    };
     img.src = cert.image;
     img.alt = (cert.name || "Certificate") + " certificate";
     title.textContent = [cert.name, cert.institute, cert.date].filter(Boolean).join(" · ");
