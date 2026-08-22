@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Content Editor — Yashwant Saini Portfolio (local only)</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+<header class="admin-header">
+  <div>
+    <h1>Portfolio Content Editor</h1>
+    <p class="hint">Local, offline tool. Nothing here is uploaded anywhere — it only reads and writes a <code>data.js</code> file on your own computer.</p>
+  </div>
+  <div class="admin-actions">
+    <label class="btn btn-ghost file-btn">
+      Import data.js
+      <input type="file" id="import-file" accept=".js" hidden />
+    </label>
+    <button id="export-btn" class="btn btn-primary" type="button">Export data.js</button>
+  </div>
+</header>
+
+<div class="admin-note">
+  <strong>How this works:</strong>
+  <ol>
+    <li>Click <em>Import data.js</em> and select the <code>data.js</code> file from your portfolio folder.</li>
+    <li>Edit any fields below.</li>
+    <li>Click <em>Export data.js</em> — a new <code>data.js</code> file downloads.</li>
+    <li>Replace the old <code>data.js</code> in your portfolio folder with the downloaded one, then commit &amp; push to GitHub (or upload it via the GitHub website) to publish the change.</li>
+  </ol>
+  <p>This page never contacts GitHub or any server, and stores no password or token, because it doesn't need to — publishing still happens through your own GitHub login when you commit the file, which is real authentication GitHub already provides.</p>
+</div>
+
+<main id="admin-root" class="admin-root">
+  <p class="empty-state">Import a data.js file to begin, or click "Start blank" below.</p>
+  <button id="start-blank" class="btn btn-ghost" type="button">Start blank</button>
+</main>
+
+<template id="tpl-section">
+  <section class="admin-section">
+    <div class="admin-section-head">
+      <h2></h2>
+      <button class="btn btn-sm btn-ghost add-btn" type="button">+ Add</button>
+    </div>
+    <div class="admin-section-body"></div>
+  </section>
+</template>
+
+<script src="admin.js"></script>
+</body>
+</html>
