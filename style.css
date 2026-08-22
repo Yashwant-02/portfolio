@@ -76,8 +76,9 @@ body {
 }
 
 img { max-width: 100%; display: block; }
-a { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: pointer; }
+a { color: inherit; text-decoration: none; touch-action: manipulation; }
+button { font-family: inherit; cursor: pointer; touch-action: manipulation; }
+.cert-thumb { touch-action: manipulation; }
 ul { margin: 0; padding: 0; list-style: none; }
 h1, h2, h3, h4 { font-family: var(--font-display); margin: 0; letter-spacing: -0.01em; }
 p { margin: 0; }
@@ -405,6 +406,7 @@ section:last-of-type { border-bottom: none; }
   background: var(--surface-2); border: 1px solid var(--line-strong); display: flex; align-items: center; justify-content: center;
 }
 .modal-title { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+.modal-missing { color: var(--text-faint); font-size: 14px; text-align: center; padding: 40px 10px; }
 
 /* ==========================================================================
    Reveal-on-scroll
